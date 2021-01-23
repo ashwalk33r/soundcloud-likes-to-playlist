@@ -2,7 +2,7 @@
 
 ## Moves tracks from "Liked" to a "Playlist" in order to make the playlist downloadable
 
-1. go to https://soundcloud.com/you/likes
+1. go to yours (https://soundcloud.com/you/likes) or anyone else likes page
 2. create new playlist
  - make sure *only* one playlist exists
  - make sure nothing is added to it
