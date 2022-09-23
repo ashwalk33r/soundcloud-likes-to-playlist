@@ -18,7 +18,7 @@
 				if (selectors.length) {
 					addToPlaylist(selectors);
 				} else {
-					document.querySelector('.soundList__item').remove();
+					document.querySelector('.badgeList__item').remove();
 
 					setTimeout(() => addToPlaylist([...selectorsAll]), 500);
 				}
