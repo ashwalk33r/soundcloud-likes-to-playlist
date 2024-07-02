@@ -2,7 +2,7 @@
 	const selectorsAll = [
 		'.sc-button-more',
 		'.sc-button-addtoset',
-		'.addToPlaylistButton[title=""]',
+		'.addToPlaylistButton',
 		'button[title="Close"]',
 	];
 
@@ -13,14 +13,18 @@
 
 		selecting(selectors.shift())
 			.then(element => {
-				element.click();
+				if (element.getAttribute('title') === 'Remove'){
+					selectors.length = 0
+				}else{
+					setTimeout(() => element.click(), 250);
+				}
 
 				if (selectors.length) {
 					addToPlaylist(selectors);
 				} else {
 					document.querySelector('.badgeList__item').remove();
 
-					setTimeout(() => addToPlaylist([...selectorsAll]), 500);
+					setTimeout(() => addToPlaylist([...selectorsAll]), 250);
 				}
 			})
 			.catch(err => {
