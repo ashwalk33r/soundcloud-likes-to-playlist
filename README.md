@@ -2,6 +2,7 @@
 
 ## Moves tracks from "Liked" to a "Playlist" in order to make the playlist downloadable
 
+0. make sure your display language is set to "English (US)" (bottom of https://soundcloud.com/settings)
 1. go to yours (https://soundcloud.com/you/likes) or anyone else likes page
 2. create new playlist
  - make sure *only* one playlist exists
