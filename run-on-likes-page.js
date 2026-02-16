@@ -1,4 +1,9 @@
 {
+    /**
+     * ⭐ CHANGE THIS NUMBER to skip songs due to 500 songs limit per playlist
+     */
+    const SKIP_FIRST = 0;
+
     const MESSAGES = {
         LOG_PREFIX: 'Track',
         CLOSING_MODAL: 'Closing modal',
@@ -93,10 +98,13 @@
 
     function processAllTracks() {
         const allTracks = document.querySelectorAll(SELECTORS.MORE_BUTTON);
+        const tracksToProcess = Array.from(allTracks).slice(SKIP_FIRST);
 
-        allTracks.forEach((track, index) => {
+        console.log(`Skipping first ${SKIP_FIRST} songs. Processing ${tracksToProcess.length} songs.`);
+
+        tracksToProcess.forEach((track, index) => {
             setTimeout(() => {
-                processTrack(track, index);
+                processTrack(track, SKIP_FIRST + index);
             }, index * DELAYS.TRACK_STAGGER);
         });
     }
